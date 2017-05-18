@@ -8,8 +8,7 @@ class Commission_Calculator(Frame):
         self.master.geometry()
         self.master.title('Commission Calulator')
         self.grid()
-        
-        
+         
         #cp_profit
         #label 
         self.cp_pofit_label=Label(self, text='Customer Pay Profit:')
@@ -36,21 +35,12 @@ class Commission_Calculator(Frame):
         
     def calculate(self):
         cp_profit = self.cp_pofit_entry.get()
-        w_profit = self.w_profit_entry.get()
-        
-        
+        w_profit = self.w_profit_entry.get()        
         try:
             cp_profit=float(cp_profit)
             w_profit=float(w_profit)
             earned_commission =(cp_profit*.14)+(w_profit*.06)
         except ValueError:
-            tkinter.messagebox.showerror('Error', 'You have to input two numbers, IDIOT!')
-            
+            tkinter.messagebox.showerror('Error', 'You have to input two numbers, IDIOT!')    
         self.earned_commission_label['text']=earned_commission
-        
-        
-
-        
-        
-        
 Commission_Calculator().mainloop()
